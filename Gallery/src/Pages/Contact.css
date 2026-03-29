@@ -1,0 +1,141 @@
+/* Background */
+.contact {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff; /* 🔥 white bg */
+  padding: 40px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Glass Container */
+.contact-container {
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+
+  background: rgba(255, 255, 255, 0.1); /* 🔥 glass */
+  backdrop-filter: blur(12px);          /* 🔥 blur effect */
+  border-radius: 15px;
+
+  border: 1px solid rgba(255,255,255,0.2);
+
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+  animation: fadeIn 1s ease;
+}
+
+/* LEFT IMAGE */
+.contact-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.contact-image img {
+  width: 220px;   /* 🔥 bigger */
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px; /* 🔥 circle remove → modern box */
+  border: 3px solid #080f0f;
+  transition: 0.4s;
+}
+
+.contact-image img:hover {
+  transform: scale(1.1);
+}
+
+/* RIGHT CONTENT */
+.contact-content {
+  flex: 1;
+  padding: 35px;
+  color: #111; /* 🔥 dark text (white bg ku match) */
+}
+
+.contact-content h1 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #000202;
+}
+
+.contact-content p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* FORM */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* INPUTS */
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: rgba(255,255,255,0.6); /* 🔥 glass input */
+  color: #000;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #050c0c;
+  box-shadow: 0 0 6px #00aaaa;
+}
+
+/* BUTTON */
+.contact-form button {
+  padding: 11px;
+  background: #00aaaa;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  transform: scale(1.05);
+  background: #008888;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .contact-image img {
+    width: 180px;
+    height: 180px;
+  }
+
+
+  .contact-image img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .contact-content {
+    padding: 25px;
+  }
+}

@@ -1,0 +1,165 @@
+.home {
+  text-align: center;
+  padding: 20px;
+}
+
+/* 🔥 HERO */
+.hero {
+  height: 55vh; /* 👇 konjam more compact */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  color: #666;
+  font-size: 16px;
+  max-width: 500px; /* 👈 text neat ah irukum */
+}
+
+/* 🔥 button */
+.btn {
+  background: linear-gradient(135deg, #000, #444); /* 👈 gradient */
+  color: white;
+  padding: 10px 22px;
+  text-decoration: none;
+  margin-top: 12px;
+  border-radius: 25px; /* 👈 pill shape */
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px); /* 👆 lift effect */
+  background: linear-gradient(135deg, #222, #666);
+}
+
+/* 🔥 IMAGE SECTION */
+.preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 20px 30px;
+  flex-wrap: wrap; /* 👈 mobile support */
+}
+
+/* common image */
+.preview img {
+  width: 260px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 18px;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* 👈 depth */
+}
+
+/* 🔥 CENTER IMAGE highlight */
+.preview img:nth-child(2) {
+  transform: translateY(-25px) scale(1.05);
+}
+
+/* hover effect */
+.preview img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+/* 🔥 HERO animation */
+@keyframes heroFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  animation: heroFade 0.8s ease;
+}
+
+.hero p {
+  animation: heroFade 1s ease;
+}
+
+.btn {
+  animation: heroFade 1.2s ease;
+}
+
+/* 🔥 image animation */
+@keyframes imgFade {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.preview img {
+  animation: imgFade 0.8s ease;
+}
+
+/* 🔥 stagger effect */
+.preview img:nth-child(1) { animation-delay: 0.2s; }
+.preview img:nth-child(2) { animation-delay: 0.4s; }
+.preview img:nth-child(3) { animation-delay: 0.6s; }
+
+/* 📱 RESPONSIVE */
+
+/* tablet */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding: 40px 10px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .preview img {
+    width: 200px;
+    height: 140px;
+  }
+
+  .preview img:nth-child(2) {
+    transform: none; /* center lift remove */
+  }
+}
+
+/* mobile */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  .preview {
+    gap: 12px;
+  }
+
+  .preview img {
+    width: 100%;
+    height: 180px;
+  }
+}
