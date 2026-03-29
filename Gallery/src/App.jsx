@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom"; // 🔥 மாற்றம் இங்க
 import Navbar from "./Pages/Navbar";
 
 import Home from "./Pages/Home";
@@ -8,16 +8,16 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Footer from "./Pages/Footer";
 
-import "./App.css"; // 👈 important
+import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="app">  {/* 🔥 main wrapper */}
+    <HashRouter> {/* 🔥 BrowserRouter → HashRouter */}
+      <div className="app">
 
         <Navbar />
 
-        <div className="main-content"> {/* 🔥 THIS FIX */}
+        <div className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/gallery" element={<Gallery />} />
@@ -29,7 +29,7 @@ function App() {
         <Footer />
 
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
